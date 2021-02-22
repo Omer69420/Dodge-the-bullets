@@ -1,3 +1,7 @@
+Dodge the balls
+Ömer Cinar
+
+
 -- är i tidiga stadier vid mina kod tester, Försöker vänja mig till Lua stilen. 
 
 nästa steg kommer vara att få kontroll över cirkeln med hjälp av pilarna elr WASD.
