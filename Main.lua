@@ -12,5 +12,18 @@
 --love.draw = function ()
   --  love.graphics.circle("fill", x, y, 10)
 --end
+require("player")  --länkning till andra Player mappen.
 
+-- för att veta vad Player gör måste jag länka lua filerna på detta vis.
 
+function love.load()
+    Player:load()
+end
+
+function love.update(dt)
+    Player:update(dt)
+end
+
+function love.draw()
+    Player:draw()
+end
