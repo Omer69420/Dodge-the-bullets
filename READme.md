@@ -39,3 +39,7 @@ local function move()
   end
 
   därmed kan jag använda samma princip med min nuvarande cirkel och bestämma åt vilket håll den skall röra sig.
+
+
+
+Jag hittade ett bättre sätt att få objektet att röra på sig som använder en annan stil av kod än snake varianten jag hittade förr. Det funkar mer som att när en knapp trycks ner så kommer koden uppdatera den biten av koden tills man ändrar riktning. Detta gör den med isDown funktionen.

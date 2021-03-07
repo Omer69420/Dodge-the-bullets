@@ -5,10 +5,6 @@
 
 
 
-love.load = function ()
-    
-end
-
 -- love.update = function ()
 --    x = x + 10;
 -- end

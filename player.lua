@@ -11,25 +11,19 @@ end
 
 function Player:update(dt)
 
-
 end
 
-function player:move(dt)
-
+function Player:move(dt)
 
 end
 
 
 function Player:boundaries()
 
-
-
-
 end
 
 
 
-function player:draw()
-    love.graphics.circle("fill", 50, 50, 10)
-    
+function Player:draw()
+    love.graphics.circle("fill", self.x, self.y, self.height)
 end
