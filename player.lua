@@ -8,8 +8,14 @@ function Player:load()
     self.height = 25
     self.speed = 300
 end
-
+-- "Städat", så att koden inte blandar ihop sig och så att det ser snyggare ut placerade 
+-- jag koden i enskilda funktioner och sedan lade jag fubnktionerna i update funktionen.
 function Player:update(dt)
+    Player:move(dt)
+    Player:boundaries() 
+end
+
+function Player:move(dt)
     if love.keyboard.isDown("d") 
     then self.x = self.x + self.speed * dt --riktning höger
     end
@@ -23,29 +29,24 @@ function Player:update(dt)
     end
     
     if love.keyboard.isDown("w")
-    then self.y = self.y - self.speed * dt -- riktning uppercase
+    then self.y = self.y - self.speed * dt -- riktning upp
     end
-
-    if self.y < 0 
-    then self.y = 0
-    elseif self.y + self.height > love.graphics.getHeight() 
-    then self.y = love.graphics.getHeight() - self.height
-    end
-
-    if self.x < 0
-    then self.x = 0
-    elseif self.x + self.width > love.graphics.getWidth()
-    then self.x = love.graphics.getWidth() - self.width
-    end
-
-end
-
-function Player:move(dt)
 
 end
 
 
 function Player:boundaries()
+ if self.y < 0 
+    then self.y = 0
+    elseif self.y + self.height > love.graphics.getHeight() -- boundaries upp och ner, så playern inte kan rymma kartan
+    then self.y = love.graphics.getHeight() - self.height
+    end
+
+    if self.x < 0
+    then self.x = 0
+    elseif self.x + self.width > love.graphics.getWidth() -- boundaries höger och vänster, så playern inte kan rymma kartan
+    then self.x = love.graphics.getWidth() - self.width
+    end
 
 end
 
