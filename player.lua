@@ -36,7 +36,7 @@ end
 
 
 function Player:boundaries()
- if self.y < 0 
+    if self.y < 0 
     then self.y = 0
     elseif self.y + self.height > love.graphics.getHeight() -- boundaries upp och ner, så playern inte kan rymma kartan
     then self.y = love.graphics.getHeight() - self.height
