@@ -1,6 +1,9 @@
 Dodge the balls
 Ömer Cinar
 
+Dodge all the bullets, if you get hit youlose a heart. 
+
+use "WASD" to move ur charachter.
 
 -- är i tidiga stadier vid mina kod tester, Försöker vänja mig till Lua stilen. 
 
