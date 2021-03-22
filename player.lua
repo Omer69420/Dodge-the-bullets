@@ -42,7 +42,7 @@ function Player:boundaries()
     then self.y = love.graphics.getHeight() - self.height
     end
 
-    if self.x < 0 + self.width / 2
+    if self.x < 0 + self.width / 2        -- Har lite problem med att förbättra boundaries vid uppe och vänstra delen
     then self.x = 0 + self.width / 2
     elseif self.x + self.width > love.graphics.getWidth() -- boundaries höger och vänster, så playern inte kan rymma kartan
     then self.x = love.graphics.getWidth() - self.width
