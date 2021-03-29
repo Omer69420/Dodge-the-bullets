@@ -1,19 +1,19 @@
 
-require("player")  --länkning till andra Player mappen.
-require("bullet")
--- för att veta vad Player gör måste jag länka lua filerna på detta vis.
+require("player")  --länkning till Player mappen.
+require("bullet")  --länkning till Bullet mappen.
+-- för att veta vad Player gör måste jag länka lua filerna på detta vis och samma med Bullet mappen.
 
-function love.load()
+function love.load() -- laddar in filerna
     Player:load()
     bullet:load()
 end
 
-function love.update(dt)
+function love.update(dt) -- updaterar de(de rör på sig)
     Player:update(dt)
     bullet:update(dt)
 end
 
-function love.draw()
+function love.draw() -- ritar ut filernas info
     Player:draw()
     bullet:draw()
 end
