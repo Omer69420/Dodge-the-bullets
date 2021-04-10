@@ -1,6 +1,7 @@
 
 require("player")  --länkning till Player mappen.
 require("bullet")  --länkning till Bullet mappen.
+require("physics") --länkning till Physichs mappen
 -- för att veta vad Player gör måste jag länka lua filerna på detta vis och samma med Bullet mappen.
 
 function love.load() -- laddar in filerna
