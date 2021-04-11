@@ -11,6 +11,12 @@ function bullet:update(dt)  -- Bullets hastighet
     y = y + 250 * dt 
 end
 
+function bullet:collide()
+    if checkCollision(self, Player) then
+        self.speed = 0 
+    end
+end
+
 
 function bullet:draw()
     love.graphics.setColor(1,0,0)  -- färgen av bullets
