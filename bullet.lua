@@ -5,13 +5,15 @@ function bullet:load() -- Bullets värden
     self.y = 0
     self.width = 20
     self.height = 10
+    self.speed = 250
 end
  
 function bullet:update(dt)  -- Bullets hastighet
-    self.y = self.y + (250 * dt)
+    self.y = self.y + (self.speed * dt)
 end
+
  
-function bullet:collide()
+function bullet:collide()  -- kolliderings funktionen
     if checkCollision(self, Player) then
         self.speed = 0
     end

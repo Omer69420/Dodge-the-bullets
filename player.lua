@@ -4,9 +4,9 @@ Player = {}
 function Player:load()
     self.x = love.graphics.getWidth() / 2   --bredden av windows rutan delat på 2 för att få mitten.
     self.y = love.graphics.getHeight() / 2  -- längden av windows rutan delat på 2 för att få mitten.
-    self.width = 25
-    self.height = 25
-    self.speed = 300
+    self.width = 25  -- player bredd
+    self.height = 25 -- player höjd
+    self.speed = 300 -- player hastighet
 end
 -- "Städat", så att koden inte blandar ihop sig och så att det ser snyggare ut placerade 
 -- jag koden i enskilda funktioner och sedan lade jag fubnktionerna i update funktionen.
@@ -36,9 +36,9 @@ end
 
 
 function Player:boundaries()
-    if self.y < 0 + self.height 
-    then self.y = 0 + self.height 
-    elseif self.y + self.height > love.graphics.getHeight() -- boundaries upp och ner, så playern inte kan rymma kartan
+    if self.y < 0 + self.height then 
+        self.y = 0 + self.height elseif
+        self.y + self.height > love.graphics.getHeight() -- boundaries upp och ner, så playern inte kan rymma kartan
     then self.y = love.graphics.getHeight() - self.height
     end
 
