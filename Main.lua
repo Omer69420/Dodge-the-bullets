@@ -24,7 +24,7 @@ function love.update(dt) -- updaterar de(de rör på sig)
     if(bullet.y > love.graphics.getHeight()) then
     bullet.y = -100
     bullet.x = math.random(50, love.graphics.getWidth() - 50)
-    bullet.speed = bullet.speed + 25
+    bullet.speed = bullet.speed + 40
     end
 
 end
