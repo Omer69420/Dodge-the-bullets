@@ -1,18 +1,18 @@
 bullet = {}     -- definierar Bullet
 
 function bullet:load() -- Bullets värden
-    x = 10
-    y = 150
-    self.width = 40
-    self.height = 20
+    x  = love.math.random(710)
+    y = 0
+    self.width = 20
+    self.height = 10
 end
 
 function bullet:update(dt)  -- Bullets hastighet
-    x = x + 100 * dt 
+    y = y + 250 * dt 
 end
 
 
 function bullet:draw()
-    love.graphics.circle("fill", x, y, self.height)  -- Tillfällig cirkel för Bullets utseende
+    love.graphics.setColor(1,0,0)  -- färgen av bullets
+    love.graphics.circle("fill", x , y, self.height)  -- Tillfällig cirkel för Bullets utseende
 end
-

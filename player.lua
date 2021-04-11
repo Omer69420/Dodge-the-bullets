@@ -53,5 +53,6 @@ end
 
 
 function Player:draw()
+    love.graphics.setColor(0,0,1)  -- färgen av playern
     love.graphics.circle("fill", self.x, self.y, self.height)
 end
