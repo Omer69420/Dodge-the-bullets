@@ -1,4 +1,5 @@
 bullet = {}     -- definierar Bullet
+score = 0
 
 function bullet:load() -- Bullets värden
     self.x  = love.math.random(720)

@@ -25,6 +25,7 @@ function love.update(dt) -- updaterar de(de rör på sig)
     bullet.y = -100
     bullet.x = math.random(50, love.graphics.getWidth() - 50)
     bullet.speed = bullet.speed + 40
+    score = score + 1
     end
 
 end
@@ -38,6 +39,7 @@ function love.draw() -- ritar ut filernas info
         local text = "GAME OVER!"
         love.graphics.print(text, love.graphics.getWidth() / 2 - font:getWidth(text) / 2, love.graphics.getHeight() * (1 / 3))
         return
+        else scoreDraw()  -- updaterar ens score per bullet dodgad
     end
  
     Player:draw()
@@ -58,4 +60,11 @@ function love.keypressed(key)  -- ifall man vill stänga av spelet
     elseif key == "r" then     -- restartar spelet om man trycker på "R"
         love.event.quit("restart")
     end
+end
+
+
+scoreDraw = function ()    -- score system
+    love.graphics.setColor(1, 1, 1, 1)
+    love.graphics.print("Score: ", 10, 10, 0, 2)
+    love.graphics.print(score, 100, 10, 0, 2)
 end
