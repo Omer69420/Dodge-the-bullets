@@ -1,7 +1,7 @@
 bullet = {}     -- definierar Bullet
 
 function bullet:load() -- Bullets värden
-    self.x  = love.math.random(710)
+    self.x  = love.math.random(720)
     self.y = 0
     self.width = 20
     self.height = 10
