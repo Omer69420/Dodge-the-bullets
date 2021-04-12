@@ -21,11 +21,11 @@ function love.update(dt) -- updaterar de(de rör på sig)
     end
  
  --Kontrollerar om bollen hamnar utanför mappen!
-    if(bullet.y > love.graphics.getHeight()) then
-    bullet.y = -100
-    bullet.x = math.random(50, love.graphics.getWidth() - 50)
-    bullet.speed = bullet.speed + 40
-    score = score + 1
+    if(bullet.y > love.graphics.getHeight()) and isGameOver == false then
+        bullet.y = -100
+        bullet.x = math.random(50, love.graphics.getWidth() - 50)
+        bullet.speed = bullet.speed + 40
+        score = score + 1
     end
 
 end
@@ -38,7 +38,9 @@ function love.draw() -- ritar ut filernas info
         love.graphics.setFont(font)
         local text = "GAME OVER!"
         love.graphics.print(text, love.graphics.getWidth() / 2 - font:getWidth(text) / 2, love.graphics.getHeight() * (1 / 3))
+        love.graphics.print("Your score:" .. " " .. score, love.graphics.getWidth() / 6, love.graphics.getHeight() / 2, 0, 2)
         return
+        
         else scoreDraw()  -- updaterar ens score per bullet dodgad
     end
  
