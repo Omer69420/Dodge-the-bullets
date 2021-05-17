@@ -11,6 +11,7 @@ local isGameOver = false   -- sätter locala värdet i booleanen i början av sp
 function love.load() -- laddar in filerna   
     Player:load()
     bullet:load()  
+    background = love.graphics.newImage("babyyoda.jpg")
 end
  
 function love.update(dt) -- updaterar de(de rör på sig)
@@ -32,7 +33,13 @@ end
 
 
 function love.draw() -- ritar ut filernas info
+    for i = 0, love.graphics.getWidth() / background:getWidth() do
+        for j = 0, love.graphics.getHeight() / background:getHeight() do
+            love.graphics.draw(background, i * background:getWidth(), j * background:getHeight())
+        end
+    end
     
+
     if(isGameOver) then    -- Om man förlorar så printar den ut texten "GAME OVER"
         local font = love.graphics.newFont(40)
         love.graphics.setFont(font)
