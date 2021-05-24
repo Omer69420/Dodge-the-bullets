@@ -12,6 +12,9 @@ function love.load() -- laddar in filerna
     Player:load()
     bullet:load()  
     background = love.graphics.newImage("babyyoda.jpg")
+    music = love.audio.newSource("starwars.mp3", "stream")
+    music:play()
+ 
 end
  
 function love.update(dt) -- updaterar de(de rör på sig)
@@ -20,7 +23,8 @@ function love.update(dt) -- updaterar de(de rör på sig)
     if(checkCollision(Player, bullet)) then
         isGameOver = true   -- boolean updateras
     end
- 
+
+     
  --Kontrollerar om bollen hamnar utanför mappen!
     if(bullet.y > love.graphics.getHeight()) and isGameOver == false then
         bullet.y = -100
@@ -28,7 +32,7 @@ function love.update(dt) -- updaterar de(de rör på sig)
         bullet.speed = bullet.speed + 40
         score = score + 1
     end
-
+    
 end
 
 
@@ -41,6 +45,7 @@ function love.draw() -- ritar ut filernas info
     
 
     if(isGameOver) then    -- Om man förlorar så printar den ut texten "GAME OVER"
+        music:stop()
         local font = love.graphics.newFont(40)
         love.graphics.setFont(font)
         local text = "GAME OVER!"
